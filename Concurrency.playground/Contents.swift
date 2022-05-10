@@ -30,28 +30,28 @@ let concurrentQueue = DispatchQueue(label: "concurrency.playground.concurrent", 
 // sync vc. async
 
 /// 1
-//serialQueue.sync {
-//    bananaTask()
-//}
-//tomatoTask()
+serialQueue.sync {
+    bananaTask()
+}
+tomatoTask()
 
 /// 2
-//serialQueue.async {
-//    bananaTask()
-//}
-//tomatoTask()
+serialQueue.async {
+    bananaTask()
+}
+tomatoTask()
 
 
 // serial vc. concurrent
 
 /// 1
-//serialQueue.async {
-//    bananaTask()
-//}
-//
-//serialQueue.async {
-//    tomatoTask()
-//}
+serialQueue.async {
+    bananaTask()
+}
+
+serialQueue.async {
+    tomatoTask()
+}
 
 /// 2
 concurrentQueue.async {
